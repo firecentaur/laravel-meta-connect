@@ -11,6 +11,13 @@ To set up the project run
 
 ## Using Laravel-SL for your Backend LSL Scripts as a DataStore
 
+The Laravel-SL project has a backend web interface which can be logged into, and used to 
+administer data.
+
+Laravel-SL has a Table called slobjects which will be used to store information from objects in secondlife useful to your scripts.
+
+A Laravel-SL Server prim for example can used in world to connect with the Laravel-SL backend website.
+
 
 
 Problem:
