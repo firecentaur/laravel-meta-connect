@@ -19,6 +19,8 @@ You can deploy on Heroku by doing
 * php artisan key:generate --show
 * heroku config:set APP_KEY=<the_key>
 * follow https://devcenter.heroku.com/articles/getting-started-with-laravel
+* edit .env.heroku and put heroku and db info in it
+* run python3 heroku-env.py
 
 # Database setup
 Getting the database url from heroku clearDB
