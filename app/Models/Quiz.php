@@ -31,7 +31,7 @@ class Quiz extends Model
     use HasFactory;
 
     public $table = 'quiz';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -82,6 +82,7 @@ class Quiz extends Model
      * @var array
      */
     public static $rules = [
+        'userid' => 'nullable|integer',
         'course' => 'nullable',
         'name' => 'nullable|string|max:255',
         'intro' => 'nullable|string',
@@ -99,5 +100,5 @@ class Quiz extends Model
         'deleted_at' => 'nullable'
     ];
 
-    
+
 }

@@ -27,7 +27,7 @@ class SlObject extends Model
     use HasFactory;
 
     public $table = 'slobjects';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -38,6 +38,7 @@ class SlObject extends Model
 
     public $fillable = [
         'UUID',
+        'userid',
         'owner',
         'name',
         'description',
@@ -54,6 +55,7 @@ class SlObject extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'userid' => 'integer',
         'UUID' => 'string',
         'owner' => 'string',
         'name' => 'string',
@@ -71,6 +73,7 @@ class SlObject extends Model
      */
     public static $rules = [
         'UUID' => 'nullable|string|max:255',
+        'userid' => 'nullable|integer',
         'owner' => 'nullable|string|max:35',
         'name' => 'nullable|string|max:255',
         'description' => 'nullable|string|max:255',
@@ -83,5 +86,5 @@ class SlObject extends Model
         'deleted_at' => 'nullable|integer'
     ];
 
-    
+
 }
