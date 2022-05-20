@@ -9,6 +9,21 @@ To set up the project run
 * php artisan migrate
 * npm install && npm run dev   
 
+# Deployment
+
+## Heroku
+You can deploy on Heroku by doing
+* heroku login -i
+* heroku git:remote -a <app-name>
+* git push heroku HEAD:master
+* php artisan key:generate --show
+* heroku config:set APP_KEY=<the_key>
+
+# Database setup
+Getting the database url from heroku clearDB
+* heroku addons:create cleardb:free --name=laravel-sldb 
+
+
 ## Using Laravel-SL for your Backend LSL Scripts as a DataStore
 
 The Laravel-SL project has a backend web interface which can be logged into, and used to 
