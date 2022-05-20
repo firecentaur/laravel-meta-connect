@@ -1,3 +1,15 @@
+<!-- Uid Field -->
+<div class="form-group">
+    {!! Form::label('uid', 'Uid:') !!}
+    <p>{{ $user->uid }}</p>
+</div>
+
+<!-- Avatar Name Field -->
+<div class="form-group">
+    {!! Form::label('avatar_name', 'Avatar Name:') !!}
+    <p>{{ $user->avatar_name }}</p>
+</div>
+
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}

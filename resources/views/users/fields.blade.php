@@ -1,3 +1,15 @@
+<!-- Uid Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('uid', 'Uid:') !!}
+    {!! Form::text('uid', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+</div>
+
+<!-- Avatar Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('avatar_name', 'Avatar Name:') !!}
+    {!! Form::text('avatar_name', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+</div>
+
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}

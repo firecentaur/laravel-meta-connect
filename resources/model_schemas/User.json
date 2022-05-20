@@ -4,11 +4,35 @@
         "dbType": "bigInteger,true,true",
         "htmlType": null,
         "validations": null,
-        "searchable": true,
+        "searchable": false,
         "fillable": false,
         "primary": true,
         "inForm": false,
         "inIndex": false,
+        "inView": false
+    },
+    {
+        "name": "uid",
+        "dbType": "string,191:nullable",
+        "htmlType": "text",
+        "validations": "nullable|string|max:191|nullable|string|max:191",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "avatar_name",
+        "dbType": "string,191:nullable",
+        "htmlType": "text",
+        "validations": "nullable|string|max:191|nullable|string|max:191",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
         "inView": true
     },
     {
