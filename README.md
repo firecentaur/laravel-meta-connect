@@ -2,7 +2,7 @@
 ## Objective
 To provide web accessible administration interface for Second Life LSL Scripts
 
-## Setup
+### Setup
 To set up the project run
 * composer install
 * create .env in the root folder, and add your database information
