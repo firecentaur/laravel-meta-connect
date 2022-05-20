@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class QuizRepository
  * @package App\Repositories
- * @version May 20, 2022, 3:30 am UTC
+ * @version May 20, 2022, 10:43 pm UTC
 */
 
 class QuizRepository extends BaseRepository

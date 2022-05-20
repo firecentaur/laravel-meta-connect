@@ -32,3 +32,4 @@ class AddTimestampsToQuiz extends Migration
         });
     }
 }
+

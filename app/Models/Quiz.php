@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Quiz
  * @package App\Models
- * @version May 20, 2022, 3:30 am UTC
+ * @version May 20, 2022, 10:43 pm UTC
  *
  * @property integer $course
  * @property string $name
