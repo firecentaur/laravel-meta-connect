@@ -4,12 +4,12 @@
         "dbType": "bigInteger,true,true",
         "htmlType": null,
         "validations": null,
-        "searchable": false,
+        "searchable": true,
         "fillable": false,
         "primary": true,
         "inForm": false,
         "inIndex": false,
-        "inView": false
+        "inView": true
     },
     {
         "name": "name",
@@ -85,6 +85,18 @@
     },
     {
         "name": "updated_at",
+        "dbType": "datetime:nullable",
+        "htmlType": "date",
+        "validations": "nullable|nullable",
+        "searchable": false,
+        "fillable": false,
+        "primary": false,
+        "inForm": false,
+        "inIndex": false,
+        "inView": false
+    },
+    {
+        "name": "deleted_at",
         "dbType": "datetime:nullable",
         "htmlType": "date",
         "validations": "nullable|nullable",

@@ -30,3 +30,6 @@ Route::resource('quizzes', App\Http\Controllers\QuizController::class);
 
 
 Route::resource('slObjects', App\Http\Controllers\SlObjectController::class);
+
+
+Route::resource('users', App\Http\Controllers\UserController::class);
