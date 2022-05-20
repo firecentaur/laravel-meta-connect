@@ -18,6 +18,7 @@ You can deploy on Heroku by doing
 * git push heroku HEAD:master
 * php artisan key:generate --show
 * heroku config:set APP_KEY=<the_key>
+* follow https://devcenter.heroku.com/articles/getting-started-with-laravel
 
 # Database setup
 Getting the database url from heroku clearDB
