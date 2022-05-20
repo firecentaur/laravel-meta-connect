@@ -48,7 +48,10 @@ So lets begin:
 
 1) Create a table in mysql called quiz, add some fields
 2) Create the API and Model scafolding 
-```php artisan infyom:api_scaffold Quiz --fromTable --tableName quiz```
+```
+  php artisan migrate:generate quiz
+    php artisan infyom:api_scaffold Quiz --fromTable --tableName quiz
+```
 3) View the CRUD going to http://localhost/home
 4) Register a new user, and login
 5) create a quiz

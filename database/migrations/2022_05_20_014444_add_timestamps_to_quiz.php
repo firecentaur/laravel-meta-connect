@@ -13,11 +13,11 @@ class AddTimestampsToQuiz extends Migration
      */
     public function up()
     {
-        Schema::table('quiz', function (Blueprint $table) {
-            $table->timestamps();
-
-            $table->softDeletes();
-        });
+//        Schema::table('quiz', function (Blueprint $table) {
+//            $table->timestamps();
+//
+//            $table->softDeletes();
+//        });
     }
 
     /**
