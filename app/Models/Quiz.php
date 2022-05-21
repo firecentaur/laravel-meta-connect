@@ -9,8 +9,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 /**
  * Class Quiz
  * @package App\Models
- * @version May 20, 2022, 10:43 pm UTC
+ * @version May 21, 2022, 12:08 am UTC
  *
+ * @property integer $userid
+ * @property string $avatar_name
  * @property integer $course
  * @property string $name
  * @property string $intro
@@ -31,7 +33,7 @@ class Quiz extends Model
     use HasFactory;
 
     public $table = 'quiz';
-
+    
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -41,6 +43,8 @@ class Quiz extends Model
 
 
     public $fillable = [
+        'userid',
+        'avatar_name',
         'course',
         'name',
         'intro',
@@ -62,6 +66,8 @@ class Quiz extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'userid' => 'integer',
+        'avatar_name' => 'string',
         'course' => 'integer',
         'name' => 'string',
         'intro' => 'string',
@@ -82,7 +88,8 @@ class Quiz extends Model
      * @var array
      */
     public static $rules = [
-        'userid' => 'nullable|integer',
+        'userid' => 'required|integer',
+        'avatar_name' => 'nullable|string|max:191',
         'course' => 'nullable',
         'name' => 'nullable|string|max:255',
         'intro' => 'nullable|string',
@@ -100,5 +107,5 @@ class Quiz extends Model
         'deleted_at' => 'nullable'
     ];
 
-
+    
 }

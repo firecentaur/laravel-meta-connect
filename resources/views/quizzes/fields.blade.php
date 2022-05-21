@@ -1,3 +1,15 @@
+<!-- Userid Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('userid', 'Userid:') !!}
+    {!! Form::number('userid', null, ['class' => 'form-control']) !!}
+</div>
+
+<!-- Avatar Name Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('avatar_name', 'Avatar Name:') !!}
+    {!! Form::text('avatar_name', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+</div>
+
 <!-- Course Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('course', 'Course:') !!}
@@ -7,7 +19,7 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
-    {!! Form::text('name', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255,'maxlength' => 255]) !!}
+    {!! Form::text('name', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>
 
 <!-- Intro Field -->
@@ -105,7 +117,7 @@
 <!-- Password Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('password', 'Password:') !!}
-    {!! Form::password('password', ['class' => 'form-control','maxlength' => 255,'maxlength' => 255,'maxlength' => 255]) !!}
+    {!! Form::password('password', ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
 </div>
 
 <!-- Submit Field -->

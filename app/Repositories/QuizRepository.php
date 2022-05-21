@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class QuizRepository
  * @package App\Repositories
- * @version May 20, 2022, 10:43 pm UTC
+ * @version May 21, 2022, 12:08 am UTC
 */
 
 class QuizRepository extends BaseRepository
@@ -17,6 +17,8 @@ class QuizRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
+        'userid',
+        'avatar_name',
         'course',
         'name',
         'intro',

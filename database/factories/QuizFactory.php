@@ -22,8 +22,9 @@ class QuizFactory extends Factory
     public function definition()
     {
         return [
+            'userid' => $this->faker->randomDigitNotNull,
+        'avatar_name' => $this->faker->word,
         'course' => $this->faker->word,
-        'userid' => $this->faker->numberBetween(1,10),
         'name' => $this->faker->word,
         'intro' => $this->faker->text,
         'timeopen' => $this->faker->date('Y-m-d H:i:s'),

@@ -2,7 +2,9 @@
     <table class="table table-striped" id="quizzes-table">
         <thead>
             <tr>
-                <th>Course</th>
+                <th>Userid</th>
+        <th>Avatar Name</th>
+        <th>Course</th>
         <th>Name</th>
         <th>Intro</th>
         <th>Timeopen</th>
@@ -20,7 +22,9 @@
         <tbody>
         @foreach($quizzes as $quiz)
             <tr>
-                <td>{{ $quiz->course }}</td>
+                <td>{{ $quiz->userid }}</td>
+            <td>{{ $quiz->avatar_name }}</td>
+            <td>{{ $quiz->course }}</td>
             <td>{{ $quiz->name }}</td>
             <td>{{ $quiz->intro }}</td>
             <td>{{ $quiz->timeopen }}</td>
