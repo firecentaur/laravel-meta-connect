@@ -2,26 +2,32 @@
     <table class="table table-striped" id="users-table">
         <thead>
             <tr>
-                <th>id</th>
                 <th>Uuid</th>
         <th>Avatar Name</th>
         <th>Name</th>
         <th>Email</th>
         <th>Email Verified At</th>
-
+        <th>Password</th>
+        <th>Remember Token</th>
+        <th>Api Token</th>
+        <th>Last Login At</th>
+        <th>Last Login Ip</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
         <tbody>
         @foreach($users as $user)
             <tr>
-                <td>{{ $user->id }}</td>
                 <td>{{ $user->UUID }}</td>
             <td>{{ $user->avatar_name }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>
             <td>{{ $user->email_verified_at }}</td>
-
+            <td>{{ $user->password }}</td>
+            <td>{{ $user->remember_token }}</td>
+            <td>{{ $user->api_token }}</td>
+            <td>{{ $user->last_login_at }}</td>
+            <td>{{ $user->last_login_ip }}</td>
                 <td>
                     {!! Form::open(['route' => ['users.destroy', $user->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

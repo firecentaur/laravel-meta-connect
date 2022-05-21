@@ -16,3 +16,9 @@
         <span>Users</span>
     </a>
 </li>
+<li class="nav-item {{ Request::is('questions*') ? 'active' : '' }}">
+    <a class="nav-link" href="{{ route('questions.index') }}">
+        <i class="nav-icon icon-cursor"></i>
+        <span>Questions</span>
+    </a>
+</li>
