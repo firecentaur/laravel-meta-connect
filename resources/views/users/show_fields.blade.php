@@ -40,3 +40,21 @@
     <p>{{ $user->remember_token }}</p>
 </div>
 
+<!-- Api Token Field -->
+<div class="form-group">
+    {!! Form::label('api_token', 'Api Token:') !!}
+    <p>{{ $user->api_token }}</p>
+</div>
+
+<!-- Last Login At Field -->
+<div class="form-group">
+    {!! Form::label('last_login_at', 'Last Login At:') !!}
+    <p>{{ $user->last_login_at }}</p>
+</div>
+
+<!-- Last Login Ip Field -->
+<div class="form-group">
+    {!! Form::label('last_login_ip', 'Last Login Ip:') !!}
+    <p>{{ $user->last_login_ip }}</p>
+</div>
+

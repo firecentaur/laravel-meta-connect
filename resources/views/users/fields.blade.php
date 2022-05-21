@@ -55,6 +55,39 @@
     {!! Form::text('remember_token', null, ['class' => 'form-control','maxlength' => 100,'maxlength' => 100]) !!}
 </div>
 
+<!-- Api Token Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('api_token', 'Api Token:') !!}
+    {!! Form::text('api_token', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+</div>
+
+<!-- Last Login At Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('last_login_at', 'Last Login At:') !!}
+    {!! Form::text('last_login_at', null, ['class' => 'form-control','id'=>'last_login_at']) !!}
+</div>
+
+@push('scripts')
+   <script type="text/javascript">
+           $('#last_login_at').datetimepicker({
+               format: 'YYYY-MM-DD HH:mm:ss',
+               useCurrent: true,
+               icons: {
+                   up: "icon-arrow-up-circle icons font-2xl",
+                   down: "icon-arrow-down-circle icons font-2xl"
+               },
+               sideBySide: true
+           })
+       </script>
+@endpush
+
+
+<!-- Last Login Ip Field -->
+<div class="form-group col-sm-6">
+    {!! Form::label('last_login_ip', 'Last Login Ip:') !!}
+    {!! Form::text('last_login_ip', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+</div>
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}

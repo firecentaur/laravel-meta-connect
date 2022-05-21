@@ -29,9 +29,12 @@ class UserFactory extends Factory
         'email_verified_at' => $this->faker->date('Y-m-d H:i:s'),
         'password' => $this->faker->word,
         'remember_token' => $this->faker->word,
+        'api_token' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s'),
-        'deleted_at' => $this->faker->date('Y-m-d H:i:s')
+        'deleted_at' => $this->faker->date('Y-m-d H:i:s'),
+        'last_login_at' => $this->faker->date('Y-m-d H:i:s'),
+        'last_login_ip' => $this->faker->word
         ];
     }
 }

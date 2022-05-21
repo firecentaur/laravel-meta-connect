@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class UserRepository
  * @package App\Repositories
- * @version May 21, 2022, 12:17 am UTC
+ * @version May 21, 2022, 7:23 pm UTC
 */
 
 class UserRepository extends BaseRepository
@@ -23,7 +23,10 @@ class UserRepository extends BaseRepository
         'email',
         'email_verified_at',
         'password',
-        'remember_token'
+        'remember_token',
+        'api_token',
+        'last_login_at',
+        'last_login_ip'
     ];
 
     /**
