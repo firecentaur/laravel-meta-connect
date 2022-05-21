@@ -2,7 +2,8 @@
     <table class="table table-striped" id="users-table">
         <thead>
             <tr>
-                <th>Uid</th>
+                <th>id</th>
+                <th>Uuid</th>
         <th>Avatar Name</th>
         <th>Name</th>
         <th>Email</th>
@@ -14,7 +15,8 @@
         <tbody>
         @foreach($users as $user)
             <tr>
-                <td>{{ $user->uid }}</td>
+                <td>{{ $user->id }}</td>
+                <td>{{ $user->UUID }}</td>
             <td>{{ $user->avatar_name }}</td>
             <td>{{ $user->name }}</td>
             <td>{{ $user->email }}</td>

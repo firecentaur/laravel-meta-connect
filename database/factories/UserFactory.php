@@ -22,7 +22,7 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'uid' => $this->faker->word,
+            'UUID' => $this->faker->word,
         'avatar_name' => $this->faker->word,
         'name' => $this->faker->word,
         'email' => $this->faker->word,

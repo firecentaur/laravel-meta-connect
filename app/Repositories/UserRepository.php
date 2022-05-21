@@ -8,7 +8,7 @@ use App\Repositories\BaseRepository;
 /**
  * Class UserRepository
  * @package App\Repositories
- * @version May 20, 2022, 11:49 pm UTC
+ * @version May 21, 2022, 12:17 am UTC
 */
 
 class UserRepository extends BaseRepository
@@ -17,7 +17,7 @@ class UserRepository extends BaseRepository
      * @var array
      */
     protected $fieldSearchable = [
-        'uid',
+        'UUID',
         'avatar_name',
         'name',
         'email',

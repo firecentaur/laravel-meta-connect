@@ -1,7 +1,7 @@
-<!-- Uid Field -->
+<!-- Uuid Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('uid', 'Uid:') !!}
-    {!! Form::text('uid', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
+    {!! Form::label('UUID', 'Uuid:') !!}
+    {!! Form::text('UUID', null, ['class' => 'form-control','maxlength' => 191,'maxlength' => 191]) !!}
 </div>
 
 <!-- Avatar Name Field -->

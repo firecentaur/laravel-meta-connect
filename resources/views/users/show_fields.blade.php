@@ -1,7 +1,7 @@
-<!-- Uid Field -->
+<!-- Uuid Field -->
 <div class="form-group">
-    {!! Form::label('uid', 'Uid:') !!}
-    <p>{{ $user->uid }}</p>
+    {!! Form::label('UUID', 'Uuid:') !!}
+    <p>{{ $user->UUID }}</p>
 </div>
 
 <!-- Avatar Name Field -->

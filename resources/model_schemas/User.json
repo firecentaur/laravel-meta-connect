@@ -12,7 +12,7 @@
         "inView": false
     },
     {
-        "name": "uid",
+        "name": "UUID",
         "dbType": "string,191:nullable",
         "htmlType": "text",
         "validations": "nullable|string|max:191|nullable|string|max:191",
