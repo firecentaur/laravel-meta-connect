@@ -5,7 +5,9 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 /**
  * Class User
  * @package App\Models
@@ -22,14 +24,20 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|\Carbon\Carbon $last_login_at
  * @property string $last_login_ip
  */
-class User extends Model
+
+
+
+class User extends Authenticatable
 {
+    use HasApiTokens, HasFactory, Notifiable;
+
+
     use SoftDeletes;
 
     use HasFactory;
 
     public $table = 'users';
-    
+
     const CREATED_AT = 'created_at';
     const UPDATED_AT = 'updated_at';
 
@@ -91,5 +99,5 @@ class User extends Model
         'last_login_ip' => 'nullable|string|max:191'
     ];
 
-    
+
 }
