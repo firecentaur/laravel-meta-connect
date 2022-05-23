@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,9 +15,8 @@ class QuestionTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('questions')->delete();
 
-
+        Schema::dropIfExists('questions');
         $path = 'storage/database/questions.sql';
         DB::unprepared(file_get_contents($path));
     }

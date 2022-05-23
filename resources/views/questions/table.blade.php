@@ -2,8 +2,8 @@
     <table class="table table-striped" id="questions-table">
         <thead>
             <tr>
-                <th>Parent</th>
-        <th>Name</th>
+                <th>Id</th>
+                <th>Name</th>
         <th>Questiontext</th>
         <th>Questiontextformat</th>
         <th>Generalfeedback</th>
@@ -12,17 +12,16 @@
         <th>Penalty</th>
         <th>Qtype</th>
         <th>Length</th>
-        <th>Stamp</th>
-        <th>Createdby</th>
-        <th>Modifiedby</th>
+        <th>Created By</th>
+        <th>Modified By</th>
                 <th colspan="3">Action</th>
             </tr>
         </thead>
         <tbody>
         @foreach($questions as $question)
             <tr>
-                <td>{{ $question->parent }}</td>
-            <td>{{ $question->name }}</td>
+                <td>{{ $question->id }}</td>
+                <td>{{ $question->name }}</td>
             <td>{{ $question->questiontext }}</td>
             <td>{{ $question->questiontextformat }}</td>
             <td>{{ $question->generalfeedback }}</td>
@@ -31,9 +30,8 @@
             <td>{{ $question->penalty }}</td>
             <td>{{ $question->qtype }}</td>
             <td>{{ $question->length }}</td>
-            <td>{{ $question->stamp }}</td>
-            <td>{{ $question->createdby }}</td>
-            <td>{{ $question->modifiedby }}</td>
+            <td>{{ $question->created_by }}</td>
+            <td>{{ $question->modified_by }}</td>
                 <td>
                     {!! Form::open(['route' => ['questions.destroy', $question->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

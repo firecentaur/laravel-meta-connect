@@ -12,18 +12,6 @@
         "inView": false
     },
     {
-        "name": "parent",
-        "dbType": "bigInteger,false",
-        "htmlType": null,
-        "validations": "required",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
-    },
-    {
         "name": "name",
         "dbType": "string,255",
         "htmlType": "text",
@@ -132,10 +120,22 @@
         "inView": true
     },
     {
-        "name": "stamp",
-        "dbType": "string,255",
-        "htmlType": "text",
-        "validations": "required|string|max:255|string|max:255",
+        "name": "created_by",
+        "dbType": "bigInteger,false",
+        "htmlType": null,
+        "validations": "nullable|nullable",
+        "searchable": true,
+        "fillable": true,
+        "primary": false,
+        "inForm": true,
+        "inIndex": true,
+        "inView": true
+    },
+    {
+        "name": "modified_by",
+        "dbType": "bigInteger,false",
+        "htmlType": null,
+        "validations": "nullable|nullable",
         "searchable": true,
         "fillable": true,
         "primary": false,
@@ -178,29 +178,5 @@
         "inForm": false,
         "inIndex": false,
         "inView": false
-    },
-    {
-        "name": "createdby",
-        "dbType": "bigInteger,false",
-        "htmlType": null,
-        "validations": "nullable|nullable",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
-    },
-    {
-        "name": "modifiedby",
-        "dbType": "bigInteger,false",
-        "htmlType": null,
-        "validations": "nullable|nullable",
-        "searchable": true,
-        "fillable": true,
-        "primary": false,
-        "inForm": true,
-        "inIndex": true,
-        "inView": true
     }
 ]

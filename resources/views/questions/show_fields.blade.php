@@ -1,9 +1,3 @@
-<!-- Parent Field -->
-<div class="form-group">
-    {!! Form::label('parent', 'Parent:') !!}
-    <p>{{ $question->parent }}</p>
-</div>
-
 <!-- Name Field -->
 <div class="form-group">
     {!! Form::label('name', 'Name:') !!}
@@ -58,21 +52,15 @@
     <p>{{ $question->length }}</p>
 </div>
 
-<!-- Stamp Field -->
+<!-- Created By Field -->
 <div class="form-group">
-    {!! Form::label('stamp', 'Stamp:') !!}
-    <p>{{ $question->stamp }}</p>
+    {!! Form::label('created_by', 'Created By:') !!}
+    <p>{{ $question->created_by }}</p>
 </div>
 
-<!-- Createdby Field -->
+<!-- Modified By Field -->
 <div class="form-group">
-    {!! Form::label('createdby', 'Createdby:') !!}
-    <p>{{ $question->createdby }}</p>
-</div>
-
-<!-- Modifiedby Field -->
-<div class="form-group">
-    {!! Form::label('modifiedby', 'Modifiedby:') !!}
-    <p>{{ $question->modifiedby }}</p>
+    {!! Form::label('modified_by', 'Modified By:') !!}
+    <p>{{ $question->modified_by }}</p>
 </div>
 

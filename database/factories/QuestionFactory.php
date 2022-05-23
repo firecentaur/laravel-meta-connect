@@ -22,8 +22,7 @@ class QuestionFactory extends Factory
     public function definition()
     {
         return [
-            'parent' => $this->faker->word,
-        'name' => $this->faker->word,
+            'name' => $this->faker->word,
         'questiontext' => $this->faker->text,
         'questiontextformat' => $this->faker->word,
         'generalfeedback' => $this->faker->text,
@@ -32,12 +31,11 @@ class QuestionFactory extends Factory
         'penalty' => $this->faker->word,
         'qtype' => $this->faker->word,
         'length' => $this->faker->word,
-        'stamp' => $this->faker->word,
+        'created_by' => $this->faker->word,
+        'modified_by' => $this->faker->word,
         'created_at' => $this->faker->date('Y-m-d H:i:s'),
         'updated_at' => $this->faker->date('Y-m-d H:i:s'),
-        'deleted_at' => $this->faker->date('Y-m-d H:i:s'),
-        'createdby' => $this->faker->word,
-        'modifiedby' => $this->faker->word
+        'deleted_at' => $this->faker->date('Y-m-d H:i:s')
         ];
     }
 }

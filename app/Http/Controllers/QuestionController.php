@@ -7,8 +7,8 @@ use App\Http\Requests\UpdateQuestionRequest;
 use App\Repositories\QuestionRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Laracasts\Flash\Flash;
-use Illuminate\Http\Response;
+use Flash;
+use Response;
 
 class QuestionController extends AppBaseController
 {

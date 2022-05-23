@@ -2,32 +2,31 @@
 
 namespace App\Repositories;
 
-use App\Models\Question;
+use App\Models\UserModel;
 use App\Repositories\BaseRepository;
 
 /**
- * Class QuestionRepository
+ * Class UserModelRepository
  * @package App\Repositories
- * @version May 21, 2022, 8:03 pm UTC
+ * @version May 21, 2022, 9:47 pm UTC
 */
 
-class QuestionRepository extends BaseRepository
+class UserModelRepository extends BaseRepository
 {
     /**
      * @var array
      */
     protected $fieldSearchable = [
+        'UUID',
+        'avatar_name',
         'name',
-        'questiontext',
-        'questiontextformat',
-        'generalfeedback',
-        'generalfeedbackformat',
-        'defaultmark',
-        'penalty',
-        'qtype',
-        'length',
-        'created_by',
-        'modified_by'
+        'email',
+        'email_verified_at',
+        'password',
+        'remember_token',
+        'api_token',
+        'last_login_at',
+        'last_login_ip'
     ];
 
     /**
@@ -45,6 +44,6 @@ class QuestionRepository extends BaseRepository
      **/
     public function model()
     {
-        return Question::class;
+        return UserModel::class;
     }
 }

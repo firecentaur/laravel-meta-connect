@@ -34,3 +34,6 @@ Route::resource('users', App\Http\Controllers\UserController::class);
 
 
 Route::resource('questions', App\Http\Controllers\QuestionController::class);
+
+
+Route::resource('userModels', App\Http\Controllers\UserModelController::class);

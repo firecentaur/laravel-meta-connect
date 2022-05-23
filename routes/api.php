@@ -19,8 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::group(['prefix' => 'v1'], function () {
     return
-        [ Route::post('/user/register', [\App\Http\Controllers\UserController::class, 'registerSlUser']),
-          Route::post('/register', 'Auth\RegisterController@register')
+        [ Route::get('/user/registerSlAvatar', [\App\Http\Controllers\Auth\RegisterController::class, 'registerSlAvatar']),
+          Route::get('/register', 'Auth\RegisterController@register')
         ];
 
 });

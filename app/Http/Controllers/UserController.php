@@ -35,6 +35,7 @@ class UserController extends AppBaseController
             ->with('users', $users);
     }
 
+
     /**
      * Show the form for creating a new User.
      *

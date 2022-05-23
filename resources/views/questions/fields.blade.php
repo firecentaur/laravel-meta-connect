@@ -1,9 +1,3 @@
-<!-- Parent Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('parent', 'Parent:') !!}
-    {!! Form::number('parent', null, ['class' => 'form-control']) !!}
-</div>
-
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}
@@ -66,22 +60,16 @@
     {!! Form::number('length', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Stamp Field -->
+<!-- Created By Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('stamp', 'Stamp:') !!}
-    {!! Form::text('stamp', null, ['class' => 'form-control','maxlength' => 255,'maxlength' => 255]) !!}
+    {!! Form::label('created_by', 'Created By:') !!}
+    {!! Form::number('created_by', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Createdby Field -->
+<!-- Modified By Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('createdby', 'Createdby:') !!}
-    {!! Form::number('createdby', null, ['class' => 'form-control']) !!}
-</div>
-
-<!-- Modifiedby Field -->
-<div class="form-group col-sm-6">
-    {!! Form::label('modifiedby', 'Modifiedby:') !!}
-    {!! Form::number('modifiedby', null, ['class' => 'form-control']) !!}
+    {!! Form::label('modified_by', 'Modified By:') !!}
+    {!! Form::number('modified_by', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Submit Field -->

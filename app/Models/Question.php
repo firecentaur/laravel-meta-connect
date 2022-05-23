@@ -2,17 +2,15 @@
 
 namespace App\Models;
 
-
-use Illuminate\Database\Eloquent\Model;
+use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * Class Question
  * @package App\Models
- * @version May 21, 2022, 7:23 pm UTC
+ * @version May 21, 2022, 8:03 pm UTC
  *
- * @property integer $parent
  * @property string $name
  * @property string $questiontext
  * @property boolean $questiontextformat
@@ -22,9 +20,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property number $penalty
  * @property string $qtype
  * @property integer $length
- * @property string $stamp
- * @property integer $createdby
- * @property integer $modifiedby
+ * @property integer $created_by
+ * @property integer $modified_by
  */
 class Question extends Model
 {
@@ -43,7 +40,7 @@ class Question extends Model
 
 
     public $fillable = [
-        'parent',
+        'id',
         'name',
         'questiontext',
         'questiontextformat',
@@ -53,9 +50,8 @@ class Question extends Model
         'penalty',
         'qtype',
         'length',
-        'stamp',
-        'createdby',
-        'modifiedby'
+        'created_by',
+        'modified_by'
     ];
 
     /**
@@ -65,7 +61,6 @@ class Question extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'parent' => 'integer',
         'name' => 'string',
         'questiontext' => 'string',
         'questiontextformat' => 'boolean',
@@ -75,9 +70,8 @@ class Question extends Model
         'penalty' => 'decimal:7',
         'qtype' => 'string',
         'length' => 'integer',
-        'stamp' => 'string',
-        'createdby' => 'integer',
-        'modifiedby' => 'integer'
+        'created_by' => 'integer',
+        'modified_by' => 'integer'
     ];
 
     /**
@@ -86,7 +80,6 @@ class Question extends Model
      * @var array
      */
     public static $rules = [
-        'parent' => 'required',
         'name' => 'required|string|max:255',
         'questiontext' => 'required|string',
         'questiontextformat' => 'required|boolean',
@@ -96,12 +89,11 @@ class Question extends Model
         'penalty' => 'required|numeric',
         'qtype' => 'required|string|max:20',
         'length' => 'required',
-        'stamp' => 'required|string|max:255',
+        'created_by' => 'nullable',
+        'modified_by' => 'nullable',
         'created_at' => 'nullable',
         'updated_at' => 'nullable',
-        'deleted_at' => 'nullable',
-        'createdby' => 'nullable',
-        'modifiedby' => 'nullable'
+        'deleted_at' => 'nullable'
     ];
 
 
