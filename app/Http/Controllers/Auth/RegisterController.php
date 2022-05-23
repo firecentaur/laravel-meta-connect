@@ -49,14 +49,15 @@ class RegisterController extends Controller
     /**
      * Url: /api/v1/user/registerSlAvatar
      * @param Request $request
-     * @return \Illuminate\Http\JsonResponse|void
+     * @return
      */
     public function registerSlAvatar(Request $request){
 
         if (!$request->has('name')){
             return response()->json(['message'=>"missing Avatar Name"],400);
             if (!$request->has('password')){
-                return response()->json(['message'=>"missing password"],400);
+                //return response()->json(['message'=>"missing password"],400);
+                return "error|missing avatar\ndata|none";
             }
         }
         if (!$request->has('email')){
