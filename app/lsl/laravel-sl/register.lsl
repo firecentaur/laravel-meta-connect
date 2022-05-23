@@ -1,5 +1,5 @@
-// laravel-sl.register.lslp 
-// 2022-05-23 14:26:29 - LSLForge (0.1.9.6) generated
+// register.lslp 
+// 2022-05-23 15:23:20 - LSLForge (0.1.9.6) generated
 /*********************************************
 *  Copyright (c) 2022 Paul Preibisch
 *
@@ -127,5 +127,5 @@ state ready {
     llSay(0,body);
   }
 }
-// laravel-sl.register.lslp 
-// 2022-05-23 14:26:29 - LSLForge (0.1.9.6) generated
+// register.lslp 
+// 2022-05-23 15:23:20 - LSLForge (0.1.9.6) generated

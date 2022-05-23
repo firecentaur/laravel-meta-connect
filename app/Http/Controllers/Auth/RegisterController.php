@@ -54,7 +54,7 @@ class RegisterController extends Controller
     public function registerSlAvatar(Request $request){
 
         if (!$request->has('name')){
-            return response()->json(['message'=>"missing Avatar Name"],400);
+           // return response()->json(['message'=>"missing Avatar Name"],400);
             if (!$request->has('password')){
                 //return response()->json(['message'=>"missing password"],400);
                 return "error|missing avatar\ndata|none";
