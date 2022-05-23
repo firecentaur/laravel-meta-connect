@@ -9,7 +9,7 @@
 */
 string body="";
 key httpRegister;
-string url ="";
+string server ="";
 string endpoint = "user/registerSlAvatar";
 string myName;
 string myKey;
@@ -91,6 +91,23 @@ integer random_integer( integer min, integer max )
 {
   return min + (integer)( llFrand( max - min + 1 ) );
 }
+string paramsToString(list params){
+
+    
+    
+    integer index=0;
+    string paramStr="?";
+    list records = llList2ListStrided(params,0,-1,2);
+    integer length = llGetListLength(records);
+    while (index < length)
+    {
+        string param =  llList2String(records, index);
+        string value =  llList2String(records, index+1);
+        paramStr+=param+"="+value+"&";
+        index++;
+    }
+    return paramStr;
+}
 default {
     changed(integer change) { // something changed
         if (change ==CHANGED_INVENTORY){         
@@ -136,7 +153,7 @@ state readSettings{
                 }                
                 list tmp= llParseString2List(data, ["|"], []);               
                 string field= llList2String(tmp,0);                          
-                if (field=="url") url=llToLower(llList2String(tmp, 1)); 
+                if (field=="server") server=llToLower(llList2String(tmp, 1)); 
             
                  
                 gSetupQueryId = llGetNotecardLine(gSetupNotecardName,++gSetupNotecardLine); 
@@ -156,7 +173,7 @@ state loaded{
         llResetScript();
     }
     state_entry() {
-        llSay(0,"Ready - API is: "+url);
+        llSay(0,"Ready - API is: "+server);
         state ready;
     }
 }
@@ -170,8 +187,12 @@ state ready{
         llResetScript();
     }
     state_entry() {
-        llSay(0,"Contacting server "+url+endpoint);
-        httpRegister = llHTTPRequest(url+endpoint, [HTTP_METHOD, "GET", HTTP_MIMETYPE, "application/x-www-form-urlencoded"], body);    
+        
+        list paramList=["name","fire","email","fire@b3dmultitech.com"];
+        string paramsToSend = paramsToString(paramList);
+        string url = server+endpoint+paramsToSend;
+        llSay(0,"Contacting server "+url);
+        httpRegister = llHTTPRequest(url, [HTTP_METHOD, "GET", HTTP_MIMETYPE, "application/x-www-form-urlencoded"], body);    
     }
     http_response(key request_id, integer status, list metadata, string body) {
        llSay(0,body);
