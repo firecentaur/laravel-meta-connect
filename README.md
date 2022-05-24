@@ -1,62 +1,38 @@
 # Laravel sl
 ## Objective
-To provide web accessible administration interface for Second Life LSL Scripts
 
 ### Setup
-To set up the project run
-* composer install
-* create .env in the root folder, and add your database information
-* php artisan migrate
-* npm install && npm run dev   
+1) Clone the project
+   1) git clone git@github.com:firecentaur/laravel-sl.git
+2) Change to the folder 
+   1) cd laravel-sl
+3) Install dependencies 
+   1) composer install 
+4) Create config file
+   1) cp .env.example .env
+   2) update database information in .env 
+5) Create a hosting account on heroku 
+6) [download](https://devcenter.heroku.com/articles/heroku-cli) the heroku client to your os 
+7) login to heroku on your console
+   1) heroku login -i 
+8) heroku git:remote -a <app-name>
+9) git push heroku HEAD:master 
+10) php artisan key:generate --show 
+11) heroku config:set APP_KEY=<the_key>
+12) follow https://devcenter.heroku.com/articles/getting-started-with-laravel
+13) edit .env.heroku and put heroku and db info in it 
+14) run python script to copy your .env.heroku variables to heroku
+    1) python3 heroku-env.py
+    2) 5) Run database migrations
+15) php artisan migrate
+16) Install frontend dependencies
+     1) npm install && npm run dev
 
-# Deployment
 
-## Heroku
-You can deploy on Heroku by doing
-* heroku login -i
-* heroku git:remote -a <app-name>
-* git push heroku HEAD:master
-* php artisan key:generate --show
-* heroku config:set APP_KEY=<the_key>
-* follow https://devcenter.heroku.com/articles/getting-started-with-laravel
-* edit .env.heroku and put heroku and db info in it
-* run python3 heroku-env.py
-
-# Database setup
-Getting the database url from heroku clearDB
-* heroku addons:create cleardb:free --name=laravel-sldb 
+# Heroku Database setup
+1)  heroku addons:create cleardb:free --name=laravel-sldb 
 
 
 ## Using Laravel-SL for your Backend LSL Scripts as a DataStore
 
-The Laravel-SL project has a backend web interface which can be logged into, and used to 
-administer data.
-
-Laravel-SL has a Table called slobjects which will be used to store information from objects in secondlife useful to your scripts.
-
-A Laravel-SL Server prim for example can used in world to connect with the Laravel-SL backend website.
-
-
-
-Problem:
-You need a backend database for your LSL Quiz save data in such as course, quiz, questions
-For this you will need to first to create the table either in phpymadmin, mysql workbench, or phpstorm
-
-Once your table is created, you will need a Laravel Eloquent model and api scafolding to manipulate the data using your lsl script inworld through [llHTTPRequest](https://wiki.secondlife.com/wiki/LlHTTPRequest)
-
-So lets begin:
-
-1) Create a table in mysql called quiz, add some fields
-2) Create the API and Model scafolding 
-```
-  php artisan migrate:generate quiz
-    php artisan infyom:api_scaffold Quiz --fromTable --tableName quiz
-```
-3) View the CRUD going to http://localhost/home
-4) Register a new user, and login
-5) create a quiz
-6) now go to http://localhost/api/quizzes to view the data
-
-
-## LSL Scripts
 https://wiki.secondlife.com/wiki/LlHTTPRequest
