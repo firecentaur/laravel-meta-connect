@@ -71,11 +71,8 @@ class RegisterController extends Controller
 
                 // After the user is created, he's logged in.
                 $this->guard()->login($user);
-                $outpout = ['message'=>"Successfully registered!",
-                    'data'=>$user->getFillable()
 
-                ];
-                return response()->json($outpout,200);
+                return "userid|$user->id";
             }
 
 
@@ -102,8 +99,7 @@ class RegisterController extends Controller
         // registered() method or it returns null, redirect him to
         // some other URL. In our case, we just need to implement
         // that method to return the correct response.
-        return $this->registered($request, $user)
-            ?: redirect($this->redirectPath());
+        return redirect($this->redirectPath());
     }
 
     protected function registered(Request $request, $user)
