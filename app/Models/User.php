@@ -58,7 +58,10 @@ class User extends Authenticatable
         'last_login_at',
         'last_login_ip'
     ];
-
+    public function generateToken(){
+        $this->api_token = bin2hex(random_bytes(32));
+        $this->save();
+    }
     /**
      * The attributes that should be casted to native types.
      *

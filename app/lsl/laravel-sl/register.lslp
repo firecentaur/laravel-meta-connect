@@ -9,11 +9,13 @@
 */
 string body="";
 key httpRegister;
+integer gListener;
 string server ="";
 string endpoint = "user/registerSlAvatar";
 string myName;
 string myKey;
 integer MENU_CHANNEL;
+integer YESNO_CHANNEL;
 key     gSetupQueryId; //used for reading settings notecards
 list    gInventoryList;//used for reading settings notecards
 string     gSetupNotecardName="config";//used for reading settings notecards
@@ -91,22 +93,27 @@ integer random_integer( integer min, integer max )
 {
   return min + (integer)( llFrand( max - min + 1 ) );
 }
-string paramsToString(list params){
-
-    
-    
+//change list into a string we can send via http
+string keyValuesToString(list keyValues){
     integer index=0;
-    string paramStr="?";
-    list records = llList2ListStrided(params,0,-1,2);
-    integer length = llGetListLength(records);
+    list records = llList2ListStrided(keyValues,0,-1,2);
+    integer length = llGetListLength(records);     
+    integer stride=2;
+    string returnStr="";
     while (index < length)
     {
-        string param =  llList2String(records, index);
-        string value =  llList2String(records, index+1);
-        paramStr+=param+"="+value+"&";
+        list item = llList2List(keyValues,index+index,index*stride+1);
+        string param =  llList2String(item, 0);
+        string value =  llList2String(item, 1);
+        llSay(0,(string)index+": key:"+param+", value:"+value);
+        returnStr+=param+"="+value;
+          
         index++;
-    }
-    return paramStr;
+         if (index!=length){
+        returnStr+="&";
+        }     
+    }  
+    return returnStr;    
 }
 default {
     changed(integer change) { // something changed
@@ -174,8 +181,84 @@ state loaded{
     }
     state_entry() {
         llSay(0,"Ready - API is: "+server);
-        state ready;
+        state getinfo;
     }
+}
+state getinfo{
+    changed(integer change) { // something changed
+        if (change ==CHANGED_INVENTORY){         
+             llResetScript();
+        }//endif
+    }
+    on_rez(integer start_param) {
+        llResetScript();
+    }
+    state_entry() {
+        llSetText("Click to register with Laravel-Sl",RED,0);
+     
+    }
+     touch_start(integer total_number)
+    {
+        // See 'discussion' page for more comments on choosing a channel and possible left-open listener
+        
+        // "" saves byte-code over NULL_KEY
+        gListener = llListen( MENU_CHANNEL, "", "", "");     
+        llTextBox(llDetectedKey(0), "Please enter your email address", MENU_CHANNEL);
+    }
+     listen(integer channel, string name, key id, string message)
+    {
+        string emailAddress="";
+        llListenRemove(gListener);
+        // get the UUID of the person touching this prim
+       
+        // Listen to any reply from that user only, and only on the same channel to be used by llDialog
+        // It's best to set up the listener before issuing the dialog
+        YESNO_CHANNEL=MENU_CHANNEL+1;
+        if (channel == MENU_CHANNEL){
+            
+            emailAddress = message;
+            llSay(0,"Email Address: "+message);
+            gListener = llListen(YESNO_CHANNEL, "", id, "");
+            // Send a dialog to that person. We'll use a fixed negative channel number for simplicity
+            llDialog(id, "\nYou entered "+emailAddress+ " Is this correct?", ["Yes", "No" ] , YESNO_CHANNEL);
+        }
+        if (channel == YESNO_CHANNEL){
+            llSay(0,"Email " + emailAddress+ " accepted ");
+            state getPassword;
+        }
+        
+    }
+}
+state getPassword{
+        changed(integer change) { // something changed
+            if (change ==CHANGED_INVENTORY){         
+                 llResetScript();
+            }//endif
+        }
+        on_rez(integer start_param) {
+            llResetScript();
+        }
+        state_entry() {
+           gListener = llListen( MENU_CHANNEL, "", "", "");     
+           llTextBox(llDetectedKey(0), "Please enter a password", MENU_CHANNEL);
+        }
+        listen(integer channel, string name, key id, string password)
+    	{
+    		YESNO_CHANNEL = MENU_CHANNEL+1;
+	        if (channel == MENU_CHANNEL){
+	            
+	        
+	            llSay(0,"password: "+password);
+	            gListener = llListen(YESNO_CHANNEL, "", id, "");
+	            // Send a dialog to that person. We'll use a fixed negative channel number for simplicity
+	            llDialog(id, "\nYou entered "+emailAddress+ " Is this correct?", ["Yes", "No" ] , YESNO_CHANNEL);
+	        }
+	        if (channel == YESNO_CHANNEL){
+	            llSay(0,"Email " + emailAddress+ " accepted ");
+	            state getPassword;
+	        }
+	        
+	    }
 }
 state ready{
     changed(integer change) { // something changed
@@ -189,10 +272,11 @@ state ready{
     state_entry() {
         
         list paramList=["name","fire","email","fire@b3dmultitech.com"];
-        string paramsToSend = paramsToString(paramList);
+        string paramsToSend = keyValuesToString(paramList);
         string url = server+endpoint+paramsToSend;
         llSay(0,"Contacting server "+url);
-        httpRegister = llHTTPRequest(url, [HTTP_METHOD, "GET", HTTP_MIMETYPE, "application/x-www-form-urlencoded"], body);    
+        httpRegister = llHTTPRequest(url, [HTTP_METHOD, "GET", HTTP_MIMETYPE, "application/x-www-form-urlencoded"], body);  
+         
     }
     http_response(key request_id, integer status, list metadata, string body) {
        llSay(0,body);
