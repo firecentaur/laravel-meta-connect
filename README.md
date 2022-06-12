@@ -1,11 +1,21 @@
-# Laravel sl
+# Laravel-Meta-Connect
 ## Objective
+* Create a library of code for any larvel project to connect to virtual world objects in Second Life or Opensim
+* Build an Inworld Beacon Script that updates Laravel-Meta-Connect with Current Games being Played, and provide associated location link
+* Build an Inworld Scoreboard, and a Website Widget to keep track of Top scores for Scripted Second Life / Open Sim Games
+* Build a Quiz Module where educators can submit questions and quizzes on line, and be able to connect them with a variety of in world quiz games including:
+* Provide Badges and achievement Module
+* Zombie Quiz Game: Answer question to defend against a zombie attack
+* Transpoter Quiz: Sit in a vehicle, and move to next location by answering a question
+* Scavenger Hunt Game:  Place Scavenger hunt objects around the Virtual World, have users collect points by clicking each object placed
+
+
 
 ### Setup
 1) Clone the project
-   1) git clone git@github.com:firecentaur/laravel-sl.git
+   1) git clone git@github.com:firecentaur/laravel-meta-connect.git
 2) Change to the folder 
-   1) cd laravel-sl
+   1) cd laravel-meta-connect
 3) Install dependencies 
    1) composer install 
 4) Create config file
@@ -33,6 +43,6 @@
 1)  heroku addons:create cleardb:free --name=laravel-sldb 
 
 
-## Using Laravel-SL for your Backend LSL Scripts as a DataStore
+## Using Laravel-meta-connect for your Backend LSL Scripts as a DataStore
 
 https://wiki.secondlife.com/wiki/LlHTTPRequest
