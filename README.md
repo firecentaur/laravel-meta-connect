@@ -5,14 +5,21 @@ Laravel Meta Connect is an attempt to connect the Virtual World of Second Life w
 To get an idea of what is possible when connecting a web interface to Second Life games, checkout the very successful [live.gaming.sl](http://live.gaming.sl/) website.
 
 ## Objectives
-* To create a library of code for any larvel project to connect to virtual world objects in Second Life or Opensim
-* Build an Inworld Beacon Script that updates Laravel-Meta-Connect with Current Games being Played, and provide associated location link
-* Build an Inworld Scoreboard, and a Website Widget to keep track of Top scores for Scripted Second Life / Open Sim Games
-* Build a Quiz Module where educators can submit questions and quizzes on line, and be able to connect them with a variety of in world quiz games including:
-* Provide Badges and achievement Module
-* Zombie Quiz Game: Answer question to defend against a zombie attack
-* Transpoter Quiz: Sit in a vehicle, and move to next location by answering a question
-* Scavenger Hunt Game:  Place Scavenger hunt objects around the Virtual World, have users collect points by clicking each object placed
+To acheive this, Laravel-Meta-Connect will consist of serveral in-world LSL Scripts which, once configured, will communicate with Laravel to provide the following:
+
+A Laravel View that displays Current Games Being Played In Second Life with Active players.
+** A player will be registered as playing if they are sitting in a game chair (to be developed), or has clicked join on a Join Game Button (to be developed)
+
+A Laravel view that displays a scoreboard that lists top scores of an in-world Meta-Connect game
+
+A Laravel View that displays the latest Zombie Attacks that have happened in-world from the Zombie Attacks Quiz Game. Users will have to answer questions to defend against a zombie attacks. Note: I have already created this game in Second Life, Code is just needed to pull in quiz questions from Laravel, and to report all Zombie Attacks. A Laravel backend web interface will be used for creating a quiz and questions for each in-world zombie attacks game
+
+Transporter Quiz: Sit in a Second Life vehicle, and have it move to next location by answering a question. Locations are saved in the database physically in world by moving to the location, and clicking a save-location button on a HUD in Second Life. User will also add a description to the location. A Laravel backend web interface will be used for attaching a question to each location saved.
+
+Scavenger Hunt Game: Place Scavenger hunt objects around the Virtual World (each registering with Meta Connect), have users collect points by clicking each object placed. A Laravel view will display a SLURL (SL URL) to each item inside Second Life, that users will need to teleport to. The View will display a checkmark beside each item collected. Another Laravel View will list a Grid of each item, and of each user who has joined the game, and who has collected each item. Points will be awarded to each user when an item is collected. A Laravel backend web interface will be used for attaching a question to each location saved.
+
+![image](https://user-images.githubusercontent.com/331626/173256589-a8f35e02-04e7-4a15-b862-998e8541d2eb.png)
+
 
 
 ### Setup
