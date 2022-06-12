@@ -1,6 +1,11 @@
 # Laravel-Meta-Connect
-## Objective
-* Create a library of code for any larvel project to connect to virtual world objects in Second Life or Opensim
+
+Laravel Meta Connect is an attempt to connect the Virtual World of Second Life with Laravel, so that we can programatically interchange data from a Web App to Second Life / Opensim.  This library of code should act as a starting point to augment in-world games with a web interface.
+
+To get an idea of what is possible when connecting a web interface to Second Life games, checkout the very successful [live.gaming.sl](http://live.gaming.sl/) website.
+
+## Objectives
+* To create a library of code for any larvel project to connect to virtual world objects in Second Life or Opensim
 * Build an Inworld Beacon Script that updates Laravel-Meta-Connect with Current Games being Played, and provide associated location link
 * Build an Inworld Scoreboard, and a Website Widget to keep track of Top scores for Scripted Second Life / Open Sim Games
 * Build a Quiz Module where educators can submit questions and quizzes on line, and be able to connect them with a variety of in world quiz games including:
@@ -8,7 +13,6 @@
 * Zombie Quiz Game: Answer question to defend against a zombie attack
 * Transpoter Quiz: Sit in a vehicle, and move to next location by answering a question
 * Scavenger Hunt Game:  Place Scavenger hunt objects around the Virtual World, have users collect points by clicking each object placed
-
 
 
 ### Setup
